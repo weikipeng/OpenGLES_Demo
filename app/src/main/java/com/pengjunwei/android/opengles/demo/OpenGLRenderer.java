@@ -3,6 +3,7 @@ package com.pengjunwei.android.opengles.demo;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 
+import com.pengjunwei.android.opengles.demo.model.SmoothColoredSquare;
 import com.pengjunwei.android.opengles.demo.model.Square;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -13,10 +14,10 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class OpenGLRenderer implements GLSurfaceView.Renderer {
     protected Square square;
-    protected int    angle = 90;
+    protected int    angle;
 
     public OpenGLRenderer() {
-        square = new Square();
+        square = new SmoothColoredSquare();
     }
 
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -37,15 +38,6 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
 
 
     public void onDrawFrame(GL10 gl) {
-//        // Clears the screen and depth buffer.
-//        gl.glClear(GL10.GL_COLOR_BUFFER_BIT | // OpenGL docs.
-//                GL10.GL_DEPTH_BUFFER_BIT);
-//
-//        gl.glLoadIdentity();
-//        gl.glTranslatef(0, 0, -4);
-//        // Draw our square.
-//        square.draw(gl); // ( NEW )
-
         // Clears the screen and depth buffer.
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT
                 | GL10.GL_DEPTH_BUFFER_BIT);

@@ -11,18 +11,18 @@ import javax.microedition.khronos.opengles.GL10;
  * Created by WikiPeng on 2017/2/17 16:15.
  */
 public class Square {
-    private float vertices[] = {
+    protected float vertices[] = {
             -1f, 1f, 0f,
             -1f, -1f, 0f,
             1f, -1f, 0f,
             1f, 1f, 0f,
-    };
+            };
 
-    private short indices[] = {0, 1, 2, 0, 2, 3};
+    protected short indices[] = {0, 1, 2, 0, 2, 3};
 
-    private FloatBuffer vertexBuffer;
+    protected FloatBuffer vertexBuffer;
 
-    private ShortBuffer indexBuffer;
+    protected ShortBuffer indexBuffer;
 
     public Square() {
         ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
